@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Resume</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Custom Print Styles -->
+    <style>
+        @media print {
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 1.5cm; /* Standard A4 margins */
+            }
+
+            /* Ensure body takes full printable area */
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%; /* Ensure it uses the page width defined by @page */
+                -webkit-print-color-adjust: exact; /* Keep colors if needed, though black/white is safer */
+                print-color-adjust: exact;
+            }
+
+            /* Force single column layout for printing reliability */
+            .resume-container > div { /* Selects sidebar and main content divs */
+                display: block !important;
+                width: 100% !important;
+                float: none !important; /* Override potential floats */
+            }
+
+             /* Improve print readability */
+            body, h1, h2, h3, p, li {
+                color: #000 !important; /* Force black text */
+                background-color: #fff !important; /* Force white background */
+            }
+
+            /* Avoid breaking elements across pages where possible */
+            section, article, .experience-item, .education-item, .project-item {
+                page-break-inside: avoid;
+            }
+            h2, h3 {
+                 page-break-after: avoid;
+            }
+            ul {
+                page-break-before: auto; /* Don't start a list right at the top of a new page if possible */
+            }
+
+            /* Hide screen-only elements if any were added */
+            .screen-only {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased print:bg-white">
+
+    <!-- Main Resume Container -->
+    <!-- Use mx-auto for centering on screen, width controlled by content -->
+    <!-- Padding applied here for screen viewing, print margins handled by @page -->
+    <main class="container mx-auto my-8 p-8 bg-white shadow-lg max-w-4xl print:shadow-none print:my-0 print:p-0 resume-container">
+
+        <!-- Use Flexbox for Two-Column Layout (Sidebar + Main Content) on Medium Screens and Up -->
+        <!-- Stacks vertically on small screens and for print (overridden by @media print) -->
+        <div class="md:flex md:gap-8 print:block">
+
+            <!-- === Sidebar (Left Column) === -->
+            <aside class="md:w-1/3 mb-8 md:mb-0 print:w-full">
+
+                <!-- Profile Picture Section -->
+                <section class="flex flex-col items-center md:items-start mb-8">
+                    <!-- Profile Picture Placeholder -->
+                    <!-- Replace "profile-pic.jpg" with your actual profile picture file path or URL -->
+                    <img src="profile-pic.jpg"
+                         alt="Profile Picture of Your Name"
+                         class="w-32 h-32 rounded-full object-cover border border-gray-300 shadow mb-4
+                                print:shadow-none print:border-none print:w-24 print:h-24">
+
+                    <!-- Contact Information -->
+                    <div class="text-center md:text-left">
+                        <h1 class="text-3xl font-bold text-gray-800 print:text-black">Your Name</h1>
+                        <p class="text-lg text-blue-700 font-medium mb-4 print:text-black">Your Job Title / Role</p>
+
+                        <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Contact</h2>
+                        <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                            <li>Phone: <a href="tel:+1234567890" class="text-blue-600 hover:underline print:text-black print:no-underline">+1 (234) 567-890</a></li>
+                            <li>Email: <a href="mailto:youremail@example.com" class="text-blue-600 hover:underline print:text-black print:no-underline">youremail@example.com</a></li>
+                            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline print:text-black print:no-underline">linkedin.com/in/yourprofile</a></li>
+                            <li>Portfolio: <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline print:text-black print:no-underline">yourportfolio.com</a></li>
+                            <li>Location: City, State</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="mb-8">
+                    <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Skills</h2>
+                    <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                        <li>Skill Category 1: Skill A, Skill B, Skill C</li>
+                        <li>Skill Category 2: Skill D, Skill E</li>
+                        <li>Tools: Tool X, Tool Y, Tool Z</li>
+                        <li>Methodologies: Agile, Scrum, Waterfall</li>
+                        <!-- Add more skills/categories as needed -->
+                    </ul>
+                    <!-- Alternative: Badges for skills -->
+                    <!--
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-2.5 py-0.5 rounded-full print:bg-transparent print:border print:border-gray-400 print:text-black">Skill A</span>
+                         <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-2.5 py-0.5 rounded-full print:bg-transparent print:border print:border-gray-400 print:text-black">Skill B</span>
+                         Add more skill badges
+                    </div>
+                    -->
+                </section>
+
+                <!-- Languages Section -->
+                <section class="mb-8">
+                    <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Languages</h2>
+                    <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                        <li>Language 1 (Native)</li>
+                        <li>Language 2 (Fluent)</li>
+                        <li>Language 3 (Conversational)</li>
+                    </ul>
+                </section>
+
+                <!-- Certifications Section -->
+                <section>
+                    <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Certifications</h2>
+                     <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                        <li>Certification Name - Issuing Body (Year)</li>
+                        <li>Another Certification - Org (Year)</li>
+                        <!-- Add more certifications -->
+                     </ul>
+                </section>
+
+            </aside> <!-- End Sidebar -->
+
+            <!-- === Main Content (Right Column) === -->
+            <div class="md:w-2/3 print:w-full">
+
+                <!-- Summary / About Me Section -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Summary</h2>
+                    <p class="text-gray-700 leading-relaxed print:text-black">
+                        Highly motivated and results-oriented [Your Profession] with [Number] years of experience in [Key Area 1] and [Key Area 2]. Proven ability to [Quantifiable Achievement 1] and [Quantifiable Achievement 2]. Seeking a challenging role at [Company Type or Name] where I can leverage my skills in [Skill X] and [Skill Y] to contribute to success.
+                    </p>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Experience</h2>
+
+                    <!-- Job 1 -->
+                    <article class="mb-6 experience-item">
+                        <header class="flex justify-between items-baseline">
+                           <h3 class="text-lg font-semibold text-gray-700 print:text-black">Job Title</h3>
+                           <p class="text-sm text-gray-500 print:text-black">Start Date – End Date</p>
+                        </header>
+                        <p class="text-md text-gray-600 italic mb-2 print:text-black">Company Name | City, State</p>
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                            <li>Describe your key responsibility or achievement. Use action verbs. Quantify results whenever possible (e.g., Increased sales by 15%, Reduced costs by $10k).</li>
+                            <li>Another responsibility or accomplishment. Keep bullet points concise and focused on impact.</li>
+                            <li>Managed a team of [Number] people or led a project worth [Value].</li>
+                            <!-- Add more bullet points as needed -->
+                        </ul>
+                    </article>
+
+                    <!-- Job 2 -->
+                    <article class="mb-6 experience-item">
+                        <header class="flex justify-between items-baseline">
+                           <h3 class="text-lg font-semibold text-gray-700 print:text-black">Previous Job Title</h3>
+                           <p class="text-sm text-gray-500 print:text-black">Start Date – End Date</p>
+                        </header>
+                        <p class="text-md text-gray-600 italic mb-2 print:text-black">Previous Company Name | City, State</p>
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                            <li>Developed and implemented a new system that [Result].</li>
+                            <li>Collaborated with cross-functional teams to achieve [Goal].</li>
+                            <!-- Add more bullet points -->
+                        </ul>
+                    </article>
+
+                    <!-- Add more job experiences as needed -->
+
+                </section>
+
+                <!-- Education Section -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Education</h2>
+
+                    <!-- Degree 1 -->
+                    <article class="mb-4 education-item">
+                         <header class="flex justify-between items-baseline">
+                            <h3 class="text-lg font-semibold text-gray-700 print:text-black">Your Degree Name (e.g., B.S. in Computer Science)</h3>
+                            <p class="text-sm text-gray-500 print:text-black">Year Graduated</p>
+                        </header>
+                        <p class="text-md text-gray-600 italic mb-1 print:text-black">University Name | City, State</p>
+                        <p class="text-sm text-gray-600 print:text-black">Relevant coursework: Course 1, Course 2. Honors: Dean's List, Cum Laude (Optional)</p>
+                    </article>
+
+                    <!-- Degree 2 (Optional) -->
+                    <article class="mb-4 education-item">
+                         <header class="flex justify-between items-baseline">
+                            <h3 class="text-lg font-semibold text-gray-700 print:text-black">Another Degree or Relevant Coursework</h3>
+                            <p class="text-sm text-gray-500 print:text-black">Year Completed</p>
+                        </header>
+                        <p class="text-md text-gray-600 italic print:text-black">Institution Name | City, State</p>
+                    </article>
+
+                    <!-- Add more education entries if needed -->
+                </section>
+
+                <!-- Projects Section (Optional) -->
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Projects</h2>
+
+                    <!-- Project 1 -->
+                    <article class="mb-6 project-item">
+                        <header class="flex justify-between items-baseline">
+                            <h3 class="text-lg font-semibold text-gray-700 print:text-black">Project Name</h3>
+                             <p class="text-sm text-gray-500 print:text-black"><a href="#" class="text-blue-600 hover:underline print:text-black print:no-underline">[Link if available]</a></p>
+                        </header>
+                         <p class="text-md text-gray-600 italic mb-2 print:text-black">Personal Project / Course Project / Contribution</p>
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                            <li>Briefly describe the project and its purpose. Highlight your specific role and contributions.</li>
+                            <li>Mention key technologies or skills used (e.g., Built with React, Python, AWS).</li>
+                            <li>Include any notable outcomes or features.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="mb-6 project-item">
+                        <h3 class="text-lg font-semibold text-gray-700 print:text-black">Another Project Title</h3>
+                         <p class="text-md text-gray-600 italic mb-2 print:text-black">Hackathon / Open Source</p>
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                           <li>Description of the project and your contribution.</li>
+                           <li>Technologies: Tech A, Tech B, Tech C.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Add more projects as needed -->
+
+                </section>
+
+            </div> <!-- End Main Content -->
+
+        </div> <!-- End Flex Container -->
+
+    </main> <!-- End Resume Container -->
+
+</body>
+</html>

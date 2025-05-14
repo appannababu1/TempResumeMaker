@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHASKAR GANESH GUNTUBOINA - Resume</title> <!-- Updated Title -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Custom Print Styles -->
+    <style>
+        @media print {
+            /* A4 Page Setup */
+            @page {
+                size: A4;
+                margin: 1.5cm; /* Standard A4 margins */
+            }
+
+            /* Ensure body takes full printable area */
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%; /* Ensure it uses the page width defined by @page */
+                -webkit-print-color-adjust: exact; /* Keep colors if needed, though black/white is safer */
+                print-color-adjust: exact;
+            }
+
+            /* Force single column layout for printing reliability */
+            .resume-container > div { /* Selects sidebar and main content divs */
+                display: block !important;
+                width: 100% !important;
+                float: none !important; /* Override potential floats */
+            }
+
+             /* Improve print readability */
+            body, h1, h2, h3, p, li, a { /* Added 'a' tag */
+                color: #000 !important; /* Force black text */
+                background-color: #fff !important; /* Force white background */
+            }
+
+             /* Ensure links are visible but not underlined in print */
+             a {
+                text-decoration: none !important;
+             }
+
+            /* Avoid breaking elements across pages where possible */
+            section, article, .experience-item, .education-item, .project-item {
+                page-break-inside: avoid;
+            }
+            h2, h3 {
+                 page-break-after: avoid;
+            }
+            ul {
+                page-break-before: auto; /* Don't start a list right at the top of a new page if possible */
+            }
+
+            /* Hide screen-only elements if any were added */
+            .screen-only {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased print:bg-white">
+
+    <!-- Main Resume Container -->
+    <!-- Use mx-auto for centering on screen, width controlled by content -->
+    <!-- Padding applied here for screen viewing, print margins handled by @page -->
+    <main class="container mx-auto my-8 p-8 bg-white shadow-lg max-w-4xl print:shadow-none print:my-0 print:p-0 resume-container">
+
+        <!-- Use Flexbox for Two-Column Layout (Sidebar + Main Content) on Medium Screens and Up -->
+        <!-- Stacks vertically on small screens and for print (overridden by @media print) -->
+        <div class="md:flex md:gap-8 print:block">
+
+            <!-- === Sidebar (Left Column) === -->
+            <aside class="md:w-1/3 mb-8 md:mb-0 print:w-full">
+
+                <!-- Profile Picture Section -->
+                <section class="flex flex-col items-center md:items-start mb-8">
+                    <!-- Profile Picture Placeholder -->
+                    <!-- Replace "profile-pic.jpg" with your actual profile picture file path or URL -->
+                    <img src="profile-pic.jpg"
+                         alt="Profile Picture of BHASKAR GANESH GUNTUBOINA" <!-- Updated Alt Text -->
+                         class="w-32 h-32 rounded-full object-cover border border-gray-300 shadow mb-4
+                                print:shadow-none print:border-none print:w-24 print:h-24">
+
+                    <!-- Contact Information -->
+                    <div class="text-center md:text-left">
+                        <h1 class="text-3xl font-bold text-gray-800 print:text-black">BHASKAR GANESH GUNTUBOINA</h1> <!-- Updated Name -->
+                        <p class="text-lg text-blue-700 font-medium mb-4 print:text-black">Computer Science Graduate Student</p> <!-- Updated Title -->
+
+                        <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Contact</h2>
+                        <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                            <li>Phone: <a href="tel:+15716041365" class="text-blue-600 hover:underline print:text-black print:no-underline">+1 (571)-604-1365</a></li> <!-- Updated Phone -->
+                            <li>Email: <a href="mailto:ganeshbhaskar009@gmail.com" class="text-blue-600 hover:underline print:text-black print:no-underline">ganeshbhaskar009@gmail.com</a></li> <!-- Updated Email -->
+                            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline print:text-black print:no-underline">LinkedIn Profile</a></li> <!-- Updated LinkedIn text, keep placeholder URL or replace -->
+                            <!-- Removed Portfolio placeholder as it wasn't provided -->
+                            <li>Location: Plano, Texas</li> <!-- Updated Location -->
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="mb-8">
+                    <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Skills</h2>
+                    <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                        <li>Programming & Tools: Python, SQL, Java, C, HTML, CSS, JavaScript, Jupyter Notebook, Google Colab, Visual Studio</li> <!-- Updated Skills -->
+                        <li>Data Analysis & Engineering: Exploratory Data Analysis (EDA), Data Cleaning, Feature Selection, Data Engineering</li> <!-- Updated Skills -->
+                        <li>Machine Learning & AI: Machine Learning, Deep Learning, Model Training & Tuning, Deployment & Monitoring, Hyperparameter Optimization, Computer Vision, Object Detection, Image Classification, Feature Engineering</li> <!-- Updated Skills -->
+                        <li>Data Visualization & Dashboard: Matplotlib, Seaborn, Dashboard Development, Tableau</li> <!-- Updated Skills -->
+                        <li>Frameworks & Libraries: TensorFlow, PyTorch, Scikit-learn, OpenCV, Keras, Pandas, NumPy, SciPy</li> <!-- Updated Skills -->
+                        <li>Cloud Platforms: AWS</li> <!-- Updated Skills -->
+                    </ul>
+                </section>
+
+                <!-- Languages Section -->
+                <section class="mb-8">
+                    <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Languages</h2>
+                    <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                        <!-- Left default placeholders as no language data was provided -->
+                        <li>Language 1 (e.g., Native)</li>
+                        <li>Language 2 (e.g., Fluent)</li>
+                    </ul>
+                </section>
+
+                <!-- Certifications Section -->
+                <section>
+                    <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3 print:text-black print:border-black">Certifications</h2>
+                     <ul class="list-none p-0 text-sm space-y-1 text-gray-600 print:text-black">
+                        <li>Salesforce Certified Administrator (SCA)</li> <!-- Updated Certification -->
+                     </ul>
+                </section>
+
+            </aside> <!-- End Sidebar -->
+
+            <!-- === Main Content (Right Column) === -->
+            <div class="md:w-2/3 print:w-full">
+
+                <!-- Summary / About Me Section -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Summary</h2>
+                    <p class="text-gray-700 leading-relaxed print:text-black">
+                        Computer Science Graduate Student with practical experience developing, optimizing, and deploying predictive machine learning models. Demonstrated ability to lead end-to-end data science projects, from data exploration to model deployment, with a focus on real-world impact. Proficient in using frameworks like TensorFlow, PyTorch, and Scikit-learn to build robust and scalable solutions. Awarded Best Student Paper at ICDSAI23 for pioneering work in hand gesture recognition. Skilled in exploratory data analysis (EDA), data visualization, and feature engineering. Driven by a passion for applying machine learning to solve complex problems in various domains.
+                    </p> <!-- Updated Summary -->
+                </section>
+
+                <!-- Experience Section -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Experience</h2>
+
+                    <!-- Job 1 -->
+                    <article class="mb-6 experience-item">
+                        <header class="flex justify-between items-baseline">
+                           <h3 class="text-lg font-semibold text-gray-700 print:text-black">Web Development Intern</h3> <!-- Updated Job Title -->
+                           <p class="text-sm text-gray-500 print:text-black">May 2022 – July 2022</p> <!-- Updated Dates -->
+                        </header>
+                        <p class="text-md text-gray-600 italic mb-2 print:text-black">Tata Consultancy Services | Hyderabad, India</p> <!-- Updated Company & Location -->
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                            <!-- Updated Responsibilities -->
+                            <li>Collaborated with the web development team to construct a web service application using Java, Node.js, Angular, MySQL, Cloud and CSS within 3 months, yielding a minimum 20% increase in overall production speed.</li>
+                            <li>Engineered and implemented a web service for an automotive seat factory, reducing inspection time by 30%, ensured security is provided in each step and privacy is given priority.</li>
+                            <li>Resolved the issue of safety in the manufacturing unit by enabling users access to machinery inspection details, reducing machinery inspection time by 30% and attaining 100% client satisfaction.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Removed Job 2 placeholder -->
+
+                </section>
+
+                <!-- Education Section -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Education</h2>
+
+                    <!-- Degree 1 -->
+                    <article class="mb-4 education-item">
+                         <header class="flex justify-between items-baseline">
+                            <h3 class="text-lg font-semibold text-gray-700 print:text-black">Master in Information Technology and Management</h3> <!-- Updated Degree -->
+                            <p class="text-sm text-gray-500 print:text-black">Expected May 2025</p> <!-- Updated Graduation Date -->
+                        </header>
+                        <p class="text-md text-gray-600 italic mb-1 print:text-black">The University of Texas at Dallas | Texas, United States</p> <!-- Updated University & Location -->
+                        <p class="text-sm text-gray-600 print:text-black">Naveen Jindal School of Management | GPA: 3.34/4.0</p> <!-- Updated School & GPA -->
+                        <p class="text-sm text-gray-600 print:text-black">Relevant Coursework: Database Management System, Object Oriented Programming with Python, Advance Statistics, Cybersecurity, Data Warehousing, Web Analytics, Salesforce, Cloud Computing.</p> <!-- Updated Coursework -->
+                    </article>
+
+                    <!-- Degree 2 -->
+                    <article class="mb-4 education-item">
+                         <header class="flex justify-between items-baseline">
+                            <h3 class="text-lg font-semibold text-gray-700 print:text-black">Bachelor of Technology in Computer Science</h3> <!-- Updated Degree -->
+                            <p class="text-sm text-gray-500 print:text-black">April 2023</p> <!-- Updated Graduation Date -->
+                        </header>
+                        <p class="text-md text-gray-600 italic mb-1 print:text-black">Gandhi Institute Of Technology And Management | Visakhapatnam, India</p> <!-- Updated University & Location -->
+                        <p class="text-sm text-gray-600 print:text-black">GITAM School of Technology | GPA: 3.52/4.0</p> <!-- Updated School & GPA -->
+                        <p class="text-sm text-gray-600 print:text-black">Relevant Coursework: Object Oriented Programming Through Java, Data Structures with Python, Operating Systems, Computer Networks, Internet of Things, Design and Analysis of Algorithms, Software Engineering, Database Management Systems, Programming with R, Artificial Intelligence, Web Application Development, Machine Learning, Cloud Computing, Neural Networks and Deep Learning.</p> <!-- Updated Coursework -->
+                    </article>
+
+                </section>
+
+                <!-- Projects Section -->
+                <section>
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 mb-4 print:text-black print:border-black">Academic Projects</h2> <!-- Updated Section Title -->
+
+                    <!-- Project 1 -->
+                    <article class="mb-6 project-item">
+                        <header class="flex justify-between items-baseline">
+                            <h3 class="text-lg font-semibold text-gray-700 print:text-black">Application Control via Hand Gestures (YOLOv5s)</h3> <!-- Updated Project Name -->
+                             <!-- Removed link placeholder -->
+                        </header>
+                         <p class="text-md text-gray-600 italic mb-2 print:text-black">Object Detection Model | Best Student Paper Award at ICDSAI23</p> <!-- Updated Project Type/Context -->
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                            <!-- Updated Project Details -->
+                            <li>Implemented a real-time hand gesture recognition pipeline using YOLOv5s (PyTorch), fine-tuned on a custom dataset (7 classes, 210 images), achieving Precision: 0.961, Recall: 0.977, and mAP@0.5: 0.995 after 100 epochs.</li>
+                            <li>Integrated PyAutoGUI to map recognized gestures to keyboard inputs for seamless interaction with media players and PDF viewers.</li>
+                            <li>Engineered a custom dataset (210 images, 7 classes) using OpenCV and labelImg, trained on Google Colab for robustness.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="mb-6 project-item">
+                         <header class="flex justify-between items-baseline">
+                             <h3 class="text-lg font-semibold text-gray-700 print:text-black">Media Controlling Using Hand Gestures (Squeezenet)</h3> <!-- Updated Project Name -->
+                              <!-- Removed link placeholder -->
+                         </header>
+                         <p class="text-md text-gray-600 italic mb-2 print:text-black">Image Classification Model</p> <!-- Updated Project Type/Context -->
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                            <!-- Updated Project Details -->
+                           <li>Developed a real-time image classification application using webcam feeds and the Squeezenet CNN architecture, achieving 80.3% accuracy with a compact 0.47MB model size, enhancing performance by 15%.</li>
+                           <li>Integrated PyAutoGUI, OpenCV2, and Keras for streamlined keyboard control via hand gesture recognition, improving user interaction efficiency by 20%.</li>
+                           <li>Demonstrated 90.4% efficiency controlling applications like PotPlayer and VLC Media Player.</li>
+                        </ul>
+                    </article>
+
+                     <!-- Project 3 -->
+                    <article class="mb-6 project-item">
+                         <header class="flex justify-between items-baseline">
+                             <h3 class="text-lg font-semibold text-gray-700 print:text-black">Image Clustering</h3> <!-- Updated Project Name -->
+                              <!-- Removed link placeholder -->
+                         </header>
+                          <p class="text-md text-gray-600 italic mb-2 print:text-black">Feature Engineering & Clustering</p> <!-- Updated Project Type/Context -->
+                        <ul class="list-disc list-outside ml-5 text-gray-700 space-y-1 leading-relaxed print:text-black">
+                            <!-- Updated Project Details -->
+                           <li>Applied Feature Engineering techniques (PCA, UMAP, t-SNE) to reduce data dimensionality for image data.</li>
+                           <li>Implemented K-Means Clustering, improving subsequent image classification accuracy by 24% through optimized preprocessing.</li>
+                        </ul>
+                    </article>
+
+                </section>
+
+            </div> <!-- End Main Content -->
+
+        </div> <!-- End Flex Container -->
+
+    </main> <!-- End Resume Container -->
+
+</body>
+</html>

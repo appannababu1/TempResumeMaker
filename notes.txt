@@ -1,0 +1,14 @@
+Requirements:
+    Static Inputs:
+        1. Skills
+        2. Experience
+        3. Education
+        4. Certifications
+        5. Location
+        6. Resume Templates
+        7. Resume Format
+        8. user image
+
+    Dynamic Inputs:
+        1. Company entire discription
+        2. Job discription
